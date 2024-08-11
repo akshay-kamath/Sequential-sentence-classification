@@ -28,5 +28,10 @@ Fig 3 shows the  distribution of character sequence lengths. By checking the dis
 Fig 4 shows the number of sentences per label in train , test and validation sets. It can be observed that the least common label (objective) is nearly 4 times less frequent than the most commonly occurring label (results). This observation suggests that while there is some variability in label frequencies, the dataset does not exhibit an extreme imbalance.
 
 
+<b>Performance Benchmarks</b>
+![image](https://github.com/user-attachments/assets/6225e116-badc-42fb-b0ac-a4de8f417b32)
 
+Table 2: Model metrics for different models on  validation dataset  
+
+Table 2 shows the model metrics for different models wrt validation dataset.  The baseline model(Naïve Bayes with TF-IDF encoder) performs poorly on validation set(f1 score :69.89 ). Based on the comparison across all metrics, the Conv1D model with token embedding consistently outperforms the baseline Naïve Bayes model and other models . This is evident by looking at the  bar chart figure 5  which compares model metrics of all different models and clearly Conv1D with token outperforms the rest. This conclusion is drawn considering the higher values in accuracy(82.45), precision(82.22), recall(82.45), and F1 score(82.15), indicating better overall performance in classification tasks.
 

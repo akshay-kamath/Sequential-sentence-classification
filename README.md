@@ -11,7 +11,9 @@ Sample abstract:![image](https://github.com/user-attachments/assets/09e65f7f-4de
 
 <b>Dataset Analysis</b>
 
-Fig 1:  Distribution of sentences per abstract ![image](https://github.com/user-attachments/assets/8a659efe-8553-4db1-9e27-a077d056e041)
+Fig 1:  Distribution of sentences per abstract
+
+![image](https://github.com/user-attachments/assets/8a659efe-8553-4db1-9e27-a077d056e041)
 
 Fig 2:  Distribution of number of tokens in a sentence ![image](https://github.com/user-attachments/assets/8c5547e7-f77c-445b-bbda-e0ce804e7992)
 
@@ -42,6 +44,7 @@ Following experiments were performed on the PubMed 20k RCT dataset.
 4. Conv1D with character encoding
 
 ![image](https://github.com/user-attachments/assets/0a4fdb79-14f1-4bab-9d19-c1612a11e287)
+
 Fig 5:  Bar chart comparison on validation set for model metrics for different models
 
 The first baseline classifier (Naïve Bayes with TF-IDF encoder) uses the TfidfVectorizer class to convert abstract sentences to numbers using the TF-IDF (term frequency-inverse document frequency) algorithm and then learns to classify the sentences using the MultinomialNB aglorithm.
@@ -82,6 +85,7 @@ Fig 8:  F1 score comparison on test set for different models
 Figure 7 and 8 show the comparison of the f1 score on validation and  test set for different classifier models sorted based on their f1 scores .The conv1d  with token embedding model has the highest f1 score among all the models and it outperforms other models by quite a good margin on both validation and test sets. A high F1 score indicates both high precision and high recall, suggesting that a model that makes accurate positive predictions and captures a large portion of actual positive instances. On comparing our best performing model to that of   PubMed 200k RCT: a Dataset for Sequential Sentence Classification in Medical Abstracts paper , the conv1d with token embedding model underperforms ( the paper’s model f1 score was around 90% as compared to our models 81.8%). As there was currently no metrics published for PubMed20K RCT dataset so the comparison has been made with the PubMed200K dataset
 
 ![image](https://github.com/user-attachments/assets/7b6c65c9-4dd6-4d4d-9ae6-81d7fe65370e)
+
 Fig 9: Confusion matrix for best performing model(conv1d with token embedding)
 
 

@@ -1,5 +1,5 @@
 # Sequential-sentence-classification
-Objective: Building Deep learning Model for Sequential Sentence Classification, for Converting “Harder to Read” text into “Easier to Read ” text.
+<b> Objective</b>: Building Deep learning Model for Sequential Sentence Classification, for Converting “Harder to Read” text into “Easier to Read ” text.
 
 <b>Dataset details: </b>
 
@@ -10,11 +10,14 @@ Sample abstract:![image](https://github.com/user-attachments/assets/09e65f7f-4de
 ![image](https://github.com/user-attachments/assets/8ba41605-e9b4-4f96-8836-1949cdf49082)
 
 <b>Dataset Analysis</b>
+
 Fig 1:  Distribution of sentences per abstract ![image](https://github.com/user-attachments/assets/8a659efe-8553-4db1-9e27-a077d056e041)
 
 Fig 2:  Distribution of number of tokens in a sentence ![image](https://github.com/user-attachments/assets/8c5547e7-f77c-445b-bbda-e0ce804e7992)
 
-Fig 3:  Distribution of character sequence lengths ![image](https://github.com/user-attachments/assets/6bfd7f53-a86b-41e9-9050-0886e9e5e5ed)
+Fig 3:  Distribution of character sequence lengths
+
+![image](https://github.com/user-attachments/assets/6bfd7f53-a86b-41e9-9050-0886e9e5e5ed)
 
 Table 1: Dataset overview 
 ![image](https://github.com/user-attachments/assets/d1ec1212-218c-479f-99f4-7a262546b37d)
@@ -101,7 +104,7 @@ In order to understand the model performance better, let us check the part which
 
 Fig 10 shows the details regarding the top 50 inaccurate predictions given by our model. It can be observed that the model encounters difficulties when making predictions on instances at the edges of the data spectrum. This challenge might stem from inherent biases within the model or characteristics of the dataset, such as insufficient samples or imbalances in class distribution. Addressing this issue would involve strategies such as increasing the training dataset size, exploring alternative encoders or transformers, and considering the application of cross-validation techniques during model training.
 
-Conclusion
+<b>Conclusion </b>
 
 1. Conv1D model with token embedding is the best performing model on validation as well as test dataset 
 

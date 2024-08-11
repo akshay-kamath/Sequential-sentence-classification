@@ -33,10 +33,10 @@ Fig 4 shows the number of sentences per label in train , test and validation set
 <b>Performance Benchmarks</b>
 
 Following experiments were performed on the PubMed 20k RCT dataset.
-Naïve Bayes with TF-IDF encoder(baseline model)
-Conv1D with token embedding
-Pretrained feature extractor (using Universal Sentence Encoder)
-Conv1D with character encoding
+1. Naïve Bayes with TF-IDF encoder(baseline model)
+2. Conv1D with token embedding
+3. Pretrained feature extractor (using Universal Sentence Encoder)
+4. Conv1D with character encoding
 
 ![image](https://github.com/user-attachments/assets/0a4fdb79-14f1-4bab-9d19-c1612a11e287)
 Fig 5:  Bar chart comparison on validation set for model metrics for different models
@@ -67,5 +67,49 @@ Fig 6:  Bar chart comparison on test set for model metrics for different models
 Table 3: Model metrics for different models on  test  dataset  
 
 Table no 3 shows the model metrics for different models wrt test  dataset. The baseline model(Naïve Bayes with TF-IDF encoder) performs poorly on test set(f1 score :69.25 ) similar to its validation test result where f1 score was 69.89 .As we can see from the bar chart(fig 6),the other 3 models nearly similar on test set as compared to the results on the validation set.  Here also, the  Conv1D with token embedding outperforms the baseline as well as other models  and is evident on inspecting the accuracy, precision, recall and f1 score. So the conv1d is out best performing model on validation as well as test set.
+
+![image](https://github.com/user-attachments/assets/fe8cf090-b1dc-4d72-ad35-18d19a15875b) 
+
+Fig 7:  F1 score comparison on validation set for different models 
+
+![image](https://github.com/user-attachments/assets/5152a678-4ca6-4c91-9e4c-ea2807964a7f)
+
+Fig 8:  F1 score comparison on test set for different models
+
+Figure 7 and 8 show the comparison of the f1 score on validation and  test set for different classifier models sorted based on their f1 scores .The conv1d  with token embedding model has the highest f1 score among all the models and it outperforms other models by quite a good margin on both validation and test sets. A high F1 score indicates both high precision and high recall, suggesting that a model that makes accurate positive predictions and captures a large portion of actual positive instances. On comparing our best performing model to that of   PubMed 200k RCT: a Dataset for Sequential Sentence Classification in Medical Abstracts paper , the conv1d with token embedding model underperforms ( the paper’s model f1 score was around 90% as compared to our models 81.8%). As there was currently no metrics published for PubMed20K RCT dataset so the comparison has been made with the PubMed200K dataset
+
+![image](https://github.com/user-attachments/assets/7b6c65c9-4dd6-4d4d-9ae6-81d7fe65370e)
+Fig 9: Confusion matrix for best performing model(conv1d with token embedding)
+
+
+![image](https://github.com/user-attachments/assets/91f4e6b7-6c92-442c-8bf4-11de55df8f7c)
+
+Table 4:  Classification metrics for Conv1d with token embedding model
+
+So lets check more into our best performing model(conv1d with token embedding) by inspecting the classification metrics( Table 4) and Confusion matrix(Fig 9).
+On inspecting the classification metrics table carefully, we can infer below observations:
+Examining the model's f1-score reveals its proficiency in discerning abstract lines associated with Conclusions, Methods, and Results. However, the model encounters challenges in distinguishing between lines categorized as Background or Objective. This difficulty may stem from the comparatively lower number of samples available for these two classes in comparison to others.
+An additional factor contributing to this challenge is the potential similarity in embeddings for abstract texts from these two classes. This similarity could be attributed to the encoder generating embeddings that are too alike, prompting consideration for trying an alternative encoder or transformer. Alternatively, misclassification during dataset creation or the presence of noise within the texts might be influencing the model's difficulty in accurately classifying these instances, potentially indicating bias.
+The confusion matrix also reveals more or less a similar inference to that of classification metrics. Rows show actual labels and columns show predicted labels. Our model is confused between Background and objective classes (343 background sentences classified as objective and 777 objective sentences classified as background). Similar behavior is also noticed with the Methods and Results classes, and this consistency might be attributed to the factors discussed above in the examination of classification metrics.
+
+
+![image](https://github.com/user-attachments/assets/cdbe8551-7966-48a4-9348-50d7d7b0dc1a)
+
+Fig 10: Most 50 Inaccurate predictions 
+
+In order to understand the model performance better, let us check the part which gives information regarding the most inaccurate predictions given by our model which will help us to gauge to understand the scenarios in which the  model is not able to make a prediction correctly.
+
+Fig 10 shows the details regarding the top 50 inaccurate predictions given by our model. It can be observed that the model encounters difficulties when making predictions on instances at the edges of the data spectrum. This challenge might stem from inherent biases within the model or characteristics of the dataset, such as insufficient samples or imbalances in class distribution. Addressing this issue would involve strategies such as increasing the training dataset size, exploring alternative encoders or transformers, and considering the application of cross-validation techniques during model training.
+
+Conclusion
+
+1. Conv1D model with token embedding is the best performing model on validation as well as test dataset 
+
+2. The model encounters challenges arise when distinguishing between lines categorized as Background or Objective, possibly due to a lower number of available samples for these classes and potential embedding similarities. This similarity issue prompts consideration for alternative encoders or transformers to enhance model performance.
+
+3. The confusion matrix aligns with these findings, revealing notable confusion between Background and Objective classes, as well as consistent behavior in the Methods and Results classes. This reinforces the challenges faced by the model in certain classifications.
+
+
+
 
 

@@ -9,16 +9,22 @@ Sample abstract:![image](https://github.com/user-attachments/assets/09e65f7f-4de
 
 Dataset Analysis
 Fig 1:  Distribution of sentences per abstract ![image](https://github.com/user-attachments/assets/8a659efe-8553-4db1-9e27-a077d056e041)
+
+
 Fig 2:  Distribution of number of tokens in a sentence ![image](https://github.com/user-attachments/assets/8c5547e7-f77c-445b-bbda-e0ce804e7992)
+
+
 Fig 3:  Distribution of character sequence lengths ![image](https://github.com/user-attachments/assets/6bfd7f53-a86b-41e9-9050-0886e9e5e5ed)
 
 Table 1: Dataset overview 
 ![image](https://github.com/user-attachments/assets/d1ec1212-218c-479f-99f4-7a262546b37d)
 
-Table 1 provides an overview of the dataset. The column labeled |V| represents the vocabulary size. In the context of the training, validation, and test sets, the details specify the number of abstracts, followed by the number of sentences in parentheses. For instance, 15k(80k) means there are 15,000 abstracts with a total of 80,000 sentences. This information is crucial for understanding the scope and scale of the dataset.Furthermore to understand the distribution of various features in the dataset, let us check distributions into more detail.
+Table 1 provides an overview of the dataset. The column labeled |V| represents the vocabulary size. In the context of the training, validation, and test sets, the details specify the number of abstracts, followed by the number of sentences in parentheses. For instance, 15k(80k) means there are 15,000 abstracts with a total of 80,000 sentences. This information is crucial for understanding the scope and scale of the dataset.Furthermore to understand the distribution of various features in the dataset, let us check distributions into more detail.
+
 Fig 1 depicts the distribution of number of sentences per abstract. By looking at the distribution it can be inferred that most of the sentences in abstract have length in between 7 to 15 .
 
 Fig 2 shows the distribution of number of tokens per sentence. On analyzing it was found the majority of the tokens are between 0 to 55 tokens in length. 
+
 Fig 3 shows the  distribution of character sequence lengths. By checking the distribution it seems that the most of the sequences are between 0 to 200 characters long.
 
 
